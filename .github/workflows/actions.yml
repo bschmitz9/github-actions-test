@@ -1,0 +1,22 @@
+name: Actions Workflow
+
+on: [push]
+
+jobs: run-github-actions
+  runs-on: ubuntu-latest
+  steps: 
+    - name: Simple JS Action
+      id: greet
+      uses: actions/hello-world-javascript-action@v1
+      with: 
+        who-to-greet: John
+    - name: Log Greeting Time
+      run: echo "${{ steps.greet.outputs.time }}"
+
+
+# uses takes a reference to an action
+# we can write actions in the same repository or we can use an action that is on a public github repository
+# we can specify an action by branch, version, commit id (branch is not preferred - could cause breaking changes)
+# we need to provide an input to an action using the "with" key. This will product an output "Hello John"
+# information for inputs and outputs should be included with the documentation you are using
+

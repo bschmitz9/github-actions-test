@@ -38,3 +38,5 @@ jobs:
 
 # in Bash we run pwd, in Power Shell we run Get-Location
 # if we don't specify a shell it will take the runs-on command by default, so we override it with a bash shell to use pwd
+# if we don't want the jobs to run in parralel we can specify the "needs" property which will detail jobs that need to run first
+# before additional jobs are started
