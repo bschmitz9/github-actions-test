@@ -12,5 +12,28 @@ jobs:
         run: |
           node -v
           npm -v
+      - name: python command
+        run: |
+          import platform
+          print (platform.processor())
+        shell: python
+  run-windows-commands:
+    runs-on: windows-latest
+    steps:
+      - name: Directory Powershell
+        run: Get-Location
+      - name: Directory Bash
+        run: pwd
+        shell: bash
 
       
+# name can be whatever we would like
+# you can specifiy which event we want to trigger the action (can be one event or an array of events)
+# specify the operating system we are running on, we then use the appropriate commands
+# ubuntu uses bash commands, macOS / windows runs a power shell
+# steps are an array of objects - each object has a 'name' and a 'run' property
+# a step can peform an action or just run some shell command
+# | allows us to specify multiple commands
+
+# in Bash we run pwd, in Power Shell we run Get-Location
+# if we don't specify a shell it will take the runs-on command by default, so we override it with a bash shell to use pwd
