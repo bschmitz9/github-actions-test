@@ -6,6 +6,16 @@ jobs:
   run-github-actions:
     runs-on: ubuntu-latest
     steps: 
+      - name: List Files
+        run: |
+          pwd
+          ls -a
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: List files after Checkout
+        run: |
+         pwd
+         ls -a
       - name: Simple JS Action
         id: greet
         uses: actions/hello-world-javascript-action@v1
@@ -20,4 +30,5 @@ jobs:
 # we can specify an action by branch, version, commit id (branch is not preferred - could cause breaking changes)
 # we need to provide an input to an action using the "with" key. This will product an output "Hello John"
 # information for inputs and outputs should be included with the documentation you are using
+# if we want an output which is variable based we can set an id and then access that value in another job
 
