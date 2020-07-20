@@ -11,12 +11,12 @@ jobs:
         with:
           fetch-depth: 0
       - name: Print Repository info
-          run: |
-            echo $GITHUB_SHA
-            echo $GITHUB_REPOSITORY
-            echo $GITHUB_WORKSPACE
-            echo $GITHUB_REF
-            git tag
+        run: |
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_WORKSPACE
+          echo $GITHUB_REF
+          git tag
       - name: Push new tag
         if: failure()
         uses: anothrNick/github-tag-action@1.17.2
