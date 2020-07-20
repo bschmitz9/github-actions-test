@@ -19,7 +19,7 @@ jobs:
         shell: python
       - name: Checkout
         run: actions/checkout@v1
-      -name: Get all git tags
+      - name: Get all git tags
         run: git tag
   run-windows-commands:
     runs-on: windows-latest
