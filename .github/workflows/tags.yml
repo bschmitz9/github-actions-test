@@ -1,0 +1,14 @@
+name: Check Github Tags
+
+on: push
+
+jobs: 
+  check-git-tags:
+    runs-on: ubuntu-latest
+    steps:
+      name: Get All Repo Tags
+      run: |
+         echo $GITHUB_SHA
+         echo $GITHUB_REPOSITORY
+         echo $GITHUB_WORKSPACE
+         git tag
