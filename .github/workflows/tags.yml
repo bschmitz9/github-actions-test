@@ -11,10 +11,8 @@ jobs:
         with:
           fetch-depth: 0
       - name: Get All Repo Tags
-        env:
-          TAGS: git tag
         run: |
           echo $GITHUB_SHA
           echo $GITHUB_REPOSITORY
           echo $GITHUB_WORKSPACE
-          echo "TAGS: ${TAGS}"
+          echo $GITHUB_REF
