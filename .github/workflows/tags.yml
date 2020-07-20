@@ -6,13 +6,13 @@ jobs:
   check-git-tags:
     runs-on: ubuntu-latest
     steps:
-      - name: Get all tags
-        run: |
-          git tag
       - name: Checkout
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
+      - name: Get all tags
+        run: |
+          git tag
       - name: Push new tag
         uses: anothrNick/github-tag-action@1.17.2
         env:
