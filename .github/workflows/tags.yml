@@ -11,13 +11,10 @@ jobs:
         with:
           fetch-depth: 0
       - name: Get All Repo Tags
+        env:
+          TAGS: git tag
         run: |
           echo $GITHUB_SHA
           echo $GITHUB_REPOSITORY
           echo $GITHUB_WORKSPACE
-          git --version
-          git tag
-      - name: Add 'ers-rfs' Tag If Missing
-        run: |
-          git tag v3.0
-          git push origin v3.0
+          echo "TAGS: ${TAGS}"
