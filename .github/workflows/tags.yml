@@ -6,6 +6,9 @@ jobs:
   check-git-tags:
     runs-on: ubuntu-latest
     steps:
+      - name: Get all tags
+        run: |
+          git tag
       - name: Checkout
         uses: actions/checkout@v2
         with:
@@ -14,10 +17,11 @@ jobs:
         uses: anothrNick/github-tag-action@1.17.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CUSTOM_TAG: v5.0
+          CUSTOM_TAG: ers-test
       - name: Get All Repo Tags
         run: |
           echo $GITHUB_SHA
           echo $GITHUB_REPOSITORY
           echo $GITHUB_WORKSPACE
           echo $GITHUB_REF
+          git tag
