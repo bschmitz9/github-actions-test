@@ -17,3 +17,7 @@ jobs:
           echo $GITHUB_WORKSPACE
           git --version
           git tag
+      - name: Add 'ers-rfs' Tag If Missing
+        run: |
+          git tag v3.0
+          git push origin v3.0
