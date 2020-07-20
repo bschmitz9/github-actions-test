@@ -19,6 +19,7 @@ jobs:
       - name: List files after checkout
         run: |
           echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
           git --version
           git tag
       - name: Simple JS Action
