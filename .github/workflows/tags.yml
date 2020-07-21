@@ -22,6 +22,6 @@ jobs:
         uses: anothrNick/github-tag-action@1.17.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CUSTOM_TAG: ers-test2
+          CUSTOM_TAG: ers-test6
       - name: Print New Tag Added
-        run: echo 'New tag' ${{'steps.push_new_tag.outputs.new_tag'}} 'added to commit' $GITHUB_SHA 'in' $GITHUB_REPOSITORY.
+        run: echo 'New tag' ${{steps.push_new_tag.outputs.new_tag}} 'added to commit' $GITHUB_SHA 'in' $GITHUB_REPOSITORY.
