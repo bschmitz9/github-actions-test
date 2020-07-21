@@ -18,8 +18,10 @@ jobs:
           echo 'Ref:' $GITHUB_REF
           git tag
       - name: Push new tag
-        if: 
+        id: push_new_tag
         uses: anothrNick/github-tag-action@1.17.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CUSTOM_TAG: ers-test2
+      - name: New tag pushed
+        run: echo ${{steps.push_new_tag.outputs}}
