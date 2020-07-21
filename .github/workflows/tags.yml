@@ -16,7 +16,8 @@ jobs:
           echo 'Repository:' $GITHUB_REPOSITORY
           echo 'Workspacke:' $GITHUB_WORKSPACE
           echo 'Ref:' $GITHUB_REF
-          echo: 'Tags:' git tag
+          echo: 'Tags:' 
+          git tag
       - name: Push new tag
         if: 
         uses: anothrNick/github-tag-action@1.17.2
