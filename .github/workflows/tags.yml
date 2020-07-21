@@ -24,4 +24,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CUSTOM_TAG: ers-test2
       - name: New tag pushed
-        run: echo ${{steps.push_new_tag.outputs}}
+        run: echo ${{steps.push_new_tag.outputs.new_tag}}
