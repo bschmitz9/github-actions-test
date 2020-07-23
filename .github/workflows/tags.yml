@@ -12,10 +12,10 @@ jobs:
           fetch-depth: 0
       - name: Print Repository info
         run: |
-          echo 'Commit:' $GITHUB_SHA
-          echo 'Repository:' $GITHUB_REPOSITORY
-          echo 'Workspace:' $GITHUB_WORKSPACE
-          echo 'Ref:' $GITHUB_REF
+          print('Commit:' $GITHUB_SHA)
+          print('Repository:' $GITHUB_REPOSITORY)
+          print('Workspace:' $GITHUB_WORKSPACE)
+          print('Ref:' $GITHUB_REF)
           git tag
       - name: Push new tag
         if: 
@@ -26,4 +26,4 @@ jobs:
           CUSTOM_TAG: test2
       - name: Print New Tag Added
         if: success()
-        run: echo 'New tag' ${{steps.push_new_tag.outputs.new_tag}} 'added to commit' $GITHUB_SHA 'in' $GITHUB_REPOSITORY.
+        run: print('New tag' ${{steps.push_new_tag.outputs.new_tag}} 'added to commit' $GITHUB_SHA 'in' $GITHUB_REPOSITORY).
